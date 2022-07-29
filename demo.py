@@ -11,7 +11,8 @@ cursor.execute('''
                    id INTEGER PRIMARY KEY,
                    completed BOOLEAN NOT NULL DEFAULT FALSE); 
                    ''')
-cursor.execute('INSERT INTO todos (id, completed) VALUES (2, false);')
+cursor.execute('INSERT INTO todos (id, completed)' + 
+               'VALUES (2, false);')
 
 connection.commit()
 
