@@ -17,10 +17,17 @@ db = SQLAlchemy(app)
 
 class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(), nullable=False)
+    name = db.Column(db.String(), unique=True, nullable=False)
+
+    def __repr__(self):
+        return f'<Person {self.id}, {self.name}>'
 
 
 db.create_all()
+
+# newPerson = Person(name="Mantis")
+# db.session.add(newPerson)
+# db.session.commit()
 
 
 @app.route('/')
