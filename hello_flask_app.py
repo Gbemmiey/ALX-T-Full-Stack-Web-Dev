@@ -10,6 +10,7 @@ DB_URI = config['DB_SERVER'] + '://' + config['USER'] + ':' + config['PASSWORD']
     '@' + config['DB_IP'] + ':' + config['DB_PORT'] + '/' + config['DB_NAME']
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URI
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
